@@ -22,7 +22,7 @@ public class Magpie5
      */    
     public String getGreeting()
     {
-        return "Greetings, President Obama here.";
+        return "Greetings, Barack Obama, 44th president here.";
     }
     
     /**
@@ -56,6 +56,46 @@ public class Magpie5
         else if (findKeyword(statement, "I want to", 0) >= 0)
         {
             response = transformIWantToStatement(statement);
+        } else if (findKeyword(statement, "name", 0) >= 0)
+        {
+            response = "Barack Hussein Obama II";
+        } else if (findKeyword(statement, "famous", 0) >= 0)
+        {
+            response = "I am famous, famous for my personality, my wife says. On a minor note, I was the 44th US President and served 2 terms.";
+        } else if (findKeyword(statement, "married", 0) >= 0)
+        {
+            response = "I am currently married to my wife, Michelle Obama, who is very beautiful and was First Lady.";
+        } else if ((findKeyword(statement, "kid", 0) >= 0) || (findKeyword(statement, "child", 0) >= 0) || (findKeyword(statement, "daughter", 0) >= 0) || (findKeyword(statement, "family", 0) >= 0) || (findKeyword(statement, "children", 0) >= 0) || (findKeyword(statement, "kids", 0) >= 0))
+        {
+            response = "I have 2 daughters who I named Sasha and Malia, and am married.";
+        } else if ((findKeyword(statement, "born", 0) >= 0) || (findKeyword(statement, "born", 0) >= 0))
+        {
+            response = "I was born in Honolulu, Hawaii.";
+        } else if ((findKeyword(statement, "school", 0) >= 0) || (findKeyword(statement, "education", 0) >= 0))
+        {
+            response = "I went to school at Columbia University as well as Harvard University and studied law.";
+        } else if (findKeyword(statement, "president", 0) >= 0)
+        {
+            response = "I was the 44th US President and served 2 terms.";
+        } else if ((findKeyword(statement, "hi", 0) >= 0) || (findKeyword(statement, "hello", 0) >= 0) || (findKeyword(statement, "hey", 0) >= 0) || (findKeyword(statement, "aloha", 0) >= 0))
+        {
+            response = "Aloha, I need to go to a conference soon, please be quick.";
+        } else if ((findKeyword(statement, "ok", 0) >= 0) || (findKeyword(statement, "okay", 0) >= 0))
+        {
+            response = "Glad to have that settled, go on.";
+        } else if (findKeyword(statement, "family", 0) >= 0)
+        {
+            response = "2 daughters and a loving wife";
+        } else if (findKeyword(statement, "who are you", 0) >= 0)
+        {
+            response = "As i said previously, Barack Obama, 44th President, should already know who i am, if not," 
+            + "you must not have a high degree of education, any education past 1st grade in fact.";
+        } else if ((findKeyword(statement, "your day", 0) >= 0) || (findKeyword(statement, "how are you", 0) >= 0))
+        {
+            response = "Splendid";
+        } else if ((findKeyword(statement, "live", 0) >= 0) || (findKeyword(statement, "lived", 0) >= 0))
+        {
+            response = "I live in Chicago, and have lived in Hawaii, New York Ciy, and the White House.";
         }
         //  Part of student solution
         else if (findKeyword(statement, "I want", 0) >= 0)
