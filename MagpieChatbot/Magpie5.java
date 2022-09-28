@@ -68,9 +68,6 @@ public class Magpie5
         } else if ((findKeyword(statement, "kid", 0) >= 0) || (findKeyword(statement, "child", 0) >= 0) || (findKeyword(statement, "daughter", 0) >= 0) || (findKeyword(statement, "family", 0) >= 0) || (findKeyword(statement, "children", 0) >= 0) || (findKeyword(statement, "kids", 0) >= 0))
         {
             response = "I have 2 daughters who I named Sasha and Malia, and am married.";
-        } else if ((findKeyword(statement, "born", 0) >= 0) || (findKeyword(statement, "born", 0) >= 0))
-        {
-            response = "I was born in Honolulu, Hawaii.";
         } else if ((findKeyword(statement, "school", 0) >= 0) || (findKeyword(statement, "education", 0) >= 0))
         {
             response = "I went to school at Columbia University as well as Harvard University and studied law.";
@@ -101,9 +98,7 @@ public class Magpie5
         else if (findKeyword(statement, "I want", 0) >= 0)
         {
             response = transformIWantStatement(statement);
-        }
-
-        else
+        } else 
         {
 
             // Look for a two word (you <something> me)
@@ -126,9 +121,16 @@ public class Magpie5
                         && findKeyword(statement, "you", psn) >= 0)
                 {
                     response = transformIYouStatement(statement);
-                }
-                else
+                } 
+                else 
                 {
+                psn = findKeyword(statement, "born", 0);
+                
+                if (psn >= 0 && findKeyword(statement, "when", 0) >= 0) {
+                    response = "I was born on August 4, 1964, a Leo yo!";
+                } else if (psn >= 0 && findKeyword(statement, "where", 0) >= 0) {
+                    response = "I was born in Honolulu, Hawaii.";
+                } else
                     response = getRandomResponse();
                 }
             }
